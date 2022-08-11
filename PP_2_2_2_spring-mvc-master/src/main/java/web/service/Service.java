@@ -9,15 +9,15 @@ import java.util.List;
 
 @Component
 public class Service {
-  static List<Car> carlist = Arrays.asList(
-           new Car("Yo", "petrol", "red"),
-        new Car("Yo1", "diesel", "black"),
-        new Car("Yo2", "el", "green"),
-        new Car("Yo3", "petrol", "orange"),
-        new Car("Yo4", "diesel", "brown"));
+    static List<Car> carlist = Arrays.asList(
+            new Car("Yo", "petrol", "red"),
+            new Car("Yo1", "diesel", "black"),
+            new Car("Yo2", "el", "green"),
+            new Car("Yo3", "petrol", "orange"),
+            new Car("Yo4", "diesel", "brown"));
 
 
-    public static List<Car> getCarlist( String ncar) {
+    public static List<Car> getCarlist(String ncar) {
         switch (ncar) {
             case "2":
                 return carlist.subList(0, 2);
@@ -25,8 +25,6 @@ public class Service {
                 return carlist.subList(0, 3);
             case "4":
                 return carlist.subList(0, 4);
-           /* case "null":
-                return carlist;*/
             default:
                 return carlist;
         }
