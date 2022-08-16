@@ -7,17 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import web.model.Car;
 import web.service.Service;
-import web.service.ServiceCar;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
 @RequestMapping("/cars")
 public class CarController {
 
-    Service service = new Service();
+    Service service;
     List<Car> list;
+
+    public CarController(Service service) {
+        this.service = service;
+    }
 
     @GetMapping()
     String getCar(Model model, @RequestParam(value = "count", required = false) Integer count) {
